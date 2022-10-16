@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 10:35:50 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/16 16:55:57 by mghalmi          ###   ########.fr       */
+/*   Created: 2022/10/14 17:04:01 by mghalmi           #+#    #+#             */
+/*   Updated: 2022/10/16 11:34:08 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned char	*str;
+	int	i;
 
-	str = (unsigned char *)b;
-	while (len-- > 0)
-		*(str++) = (unsigned char)c;
-	return (b);
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+	}
 }
-

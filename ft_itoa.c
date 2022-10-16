@@ -6,48 +6,56 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:03:28 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/12 17:04:03 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/16 18:55:30 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count(int n)
+int	len_int(int n)
 {
-	int	somme;
+	int	len;
 
-	somme = 2;
+	len = 0;
 	if (n < 0)
-		somme++;
-	while (n / 10)
+		len++;
+	while (n)
 	{
-		somme++;
 		n = n / 10;
+		len++;
 	}
-	return (somme);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	int		len;
 	int		i;
-	int		b;
-
+	char	*res;
+	
 	i = 0;
-	b = count(n);
-	if (n < 0)
-		n *= -1;
-	str = malloc(sizeof(char) * b);
-	if (!str)
+	len = len_int(n);
+	res = malloc(sizeof(char) * (len + 1));
+	if (!res)
 		return (NULL);
-	str[--b] = '\0';
-	while (n / 10)
+	res[len] = '\0';
+	if (n < 0)
 	{
-		str[--b] = (n % 10) + '0';
+		res[0] = '-';
+		i = 1;
+	}
+	while (len-- > i)
+	{
+		if (n < 0)
+			res[len] = '0' + n % 10 * (-1);
+		else
+			res[len] = '0' + n % 10;
 		n = n / 10;
 	}
-	str[--b] = n % 10 + '0';
-	if (b == 1)
-		str[--b] = '-';
-	return (str);
+	return (res);
+}
+
+int main()
+{
+    printf("%s" , ft_itoa(4000));
 }
