@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:28:01 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/16 17:07:38 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/17 12:15:52 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,14 @@ size_t	ft_strlcat(char	*dst, const	char *src, size_t destsize)
 	i = 0;
 	if (destsize < dst_len + 1)
 		return (destsize + src_len);
-	if (size > dst + 1)
+	if (destsize > dst_len + 1)
 	{
-		
+		while (src[i] && dst_len + 1 + i < destsize)
+		{
+			dst[dst_len + i] = src[i];
+			i++;
+		}
 	}
-}
-
-int main()
-{
-    // char b[30]; memset(b, 0, 30);
-    char str[1000] = "hello";
-    char str_2[] = "world";
-    // char s[] = "12345";
-    // char b[] = "";
-    // printf("%zu\n", ft_strlcat(b,s,0));
-    printf("%lu", ft_strlcat(str, str_2,10));
-    printf("|%s|\n", str);
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }

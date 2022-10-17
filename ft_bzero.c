@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:40:51 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/16 12:45:24 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:05:21 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*str;
+	char	*str;
 
-	str = (unsigned char *)s;
+	str = (char *)s;
 	while (n-- > 0)
 	{
 		*(str++) = 0;
 	}
+	*(str) = '\0';
 }

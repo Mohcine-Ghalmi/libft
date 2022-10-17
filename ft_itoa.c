@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:03:28 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/16 18:55:30 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/17 12:29:21 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_itoa(int n)
 	int		len;
 	int		i;
 	char	*res;
-	
+
 	i = 0;
 	len = len_int(n);
 	res = malloc(sizeof(char) * (len + 1));
@@ -53,9 +53,4 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	return (res);
-}
-
-int main()
-{
-    printf("%s" , ft_itoa(4000));
 }
