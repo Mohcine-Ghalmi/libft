@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:40:32 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/08 16:27:13 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/18 11:48:53 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 	i = 0;
 	if (destsize)
 	{
-		while (src[i] && i < destsize)
+		while (src[i] && i < destsize - 1)
 		{
 			dest[i] = src[i];
 			i++;

@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:52:24 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/09 12:13:09 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/18 11:32:34 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	len;
+	char	find;
 
-	len = ft_strlen(s) - 1;
-	while (s[len])
+	find = (unsigned char)c;
+	len = ft_strlen(s);
+	while (len > 0)
 	{
-		if (s[len] == c)
+		if (s[len] == find)
 			return ((char *)s + len);
 		len--;
 	}
+	if ((char)s[len] == find)
+		return ((char *)s + len);
 	return (NULL);
 }

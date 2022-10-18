@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:51:03 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/12 17:24:22 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/18 17:16:52 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,11 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	i = 0;
+	if (!s)
+		return (NULL);
 	str = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!str)
+		return (NULL);
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)

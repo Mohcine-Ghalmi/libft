@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:47:23 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/10 11:58:56 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/18 17:03:52 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	pos;
 
+	if (!haystack && len == 0)
+		return (NULL);
 	if (!*needle)
 		return ((char *)haystack);
 	i = 0;

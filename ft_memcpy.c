@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:40:03 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/17 11:04:37 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/18 16:22:50 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	str1 = (char *)dst;
 	str2 = (char *)src;
+	if (!dst && !src)
+		return (NULL);
 	while (n-- > 0)
 	{
 		*(str1++) = *(str2++);
