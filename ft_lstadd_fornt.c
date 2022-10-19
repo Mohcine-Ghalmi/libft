@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_fornt.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 11:58:16 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/19 15:16:30 by mghalmi          ###   ########.fr       */
+/*   Created: 2022/10/19 08:50:34 by mghalmi           #+#    #+#             */
+/*   Updated: 2022/10/19 12:19:34 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void	ft_lstadd_fornt(t_list **lst, t_list *new)
 {
-	unsigned int	nbr;
-
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)(nb * -1);
-	}
-	else
-		nbr = (unsigned int)nb;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((char)(nbr % 10 + 48), fd);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

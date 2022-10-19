@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 11:58:16 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/19 15:16:30 by mghalmi          ###   ########.fr       */
+/*   Created: 2022/10/19 14:14:48 by mghalmi           #+#    #+#             */
+/*   Updated: 2022/10/19 14:26:35 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	nbr;
+	int len;
 
-	if (nb < 0)
+	len = 0;
+	while (lst)
 	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)(nb * -1);
+		len++;
+		lst = lst->next;
 	}
-	else
-		nbr = (unsigned int)nb;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((char)(nbr % 10 + 48), fd);
+	return (len);
+}
+
+int main()
+{
+	t_list	*head;
+	t_list	*second;
+	t_list	*third;
+
+	head = ft_lstnew("hey");
+	second = ft_lstnew("you");
+	third = ft_lstnew("yes");
+
+	printf("%d", ft_lstsize(head));
 }

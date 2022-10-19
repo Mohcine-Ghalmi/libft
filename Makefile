@@ -6,7 +6,7 @@
 #    By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 09:12:24 by mghalmi           #+#    #+#              #
-#    Updated: 2022/10/18 09:21:55 by mghalmi          ###   ########.fr        #
+#    Updated: 2022/10/19 12:19:29 by mghalmi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,14 +31,14 @@ INCLUDES = libft.h
 all : $(NAME)
 
 $(NAME) : $(SRCS) libft.h
-		@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
-		@ar rc $(NAME) $(OBJECTS)
-		@ranlib $(NAME)
+	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 clean : 
-		@rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
 
 fclean : clean
-		@rm -rf $(NAME)
+	@rm -rf $(NAME)
 	
 re : fclean all

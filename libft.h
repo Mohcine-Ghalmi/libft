@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:41:18 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/18 18:09:08 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:16:44 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct a_list
 {
 	void			*content;
 	struct s_list	*next;
-}					*t_list;
+}					t_list;
+t_list	*ft_lstnew(void *content);
 
 #endif
