@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 10:12:03 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/19 13:27:48 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/20 12:06:28 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_lstadd_back(t_list **list, t_list *new)
 {
-	t_list *ls;
-	if (!list || !new)
-		return (NULL);
-	
+	if (!*list)
+	{
+		*list = new;
+		return ;
+	}
+	ft_lstlast(*list)->next = new;
 }
