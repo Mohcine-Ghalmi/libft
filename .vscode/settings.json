@@ -6,7 +6,13 @@
         "libft.h": "c",
         "iosfwd": "cpp",
         "__config": "cpp",
-        "cstdint": "c"
+        "cstdint": "c",
+        "concepts": "c",
+        "cstdio": "c",
+        "type_traits": "c",
+        "new": "c",
+        "typeinfo": "c",
+        "ctype.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

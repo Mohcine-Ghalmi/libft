@@ -26,5 +26,5 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 			dt[len] = sr[len];
 	else
 		ft_memcpy(dt, sr, len);
-	return (dt);
+	return ((void *)dt);
 }
