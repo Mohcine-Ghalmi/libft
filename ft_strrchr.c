@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	len;
 	char	find;
 
-	find = (unsigned char)c;
+	find = (char)c;
 	len = ft_strlen(s);
 	while (len > 0)
 	{
