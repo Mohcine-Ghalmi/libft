@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*str;
 
 	str = malloc(count * size);
-	if (!str || (count == 9223372036854775807L && size == 9223372036854775807L))
+	if (!str)
 		return (0);
 	ft_bzero(str, count * size);
 	return (str);
