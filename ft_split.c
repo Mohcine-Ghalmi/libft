@@ -48,6 +48,14 @@ int	word_size(char const *s, char c)
 	return (wc);
 }
 
+char	**freespl(char **spl, int i)
+{
+	while (i--)
+		free (spl[i]);
+	free (spl);
+	return (spl);
+}
+
 char	*words(char const *s, char c)
 {
 	int		wrld_len;
@@ -57,6 +65,8 @@ char	*words(char const *s, char c)
 	i = 0;
 	wrld_len = word_size(s, c);
 	word = malloc(sizeof(char) * (wrld_len + 1));
+	if (!word)
+		return (NULL);
 	while (i < wrld_len)
 	{
 		word[i] = s[i];
@@ -84,10 +94,9 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
-		{
-			str[j++] = words(&s[i], c);
-			i++;
-		}
+			str[j++] = words(&s[i++], c);
+		if (!str[j - 1])
+			return (freespl(str - 1, j));
 		while (s[i] && s[i] != c)
 			i++;
 	}
