@@ -36,15 +36,13 @@ CC = cc
 
 INCLUDE = libft.h
 
-
-
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(INCLUDE)
 	ar rc $(NAME) $(OBJ)
 
-%.o:%.c $(INCLUDE)
-	$(CC) -c $(CFALGS) $< -o $@
+%.o:%.c 
+	$(CC) -c $(CFALGS) $<
 
 bonus: $(OBJ) $(OBJB)
 	ar rc $(NAME) $(OBJB) $(OBJ)
@@ -56,3 +54,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean re
