@@ -1,4 +1,2 @@
 # libft
-
-## GET_NEXT_LINE
-   FINISHED 125%
+   FINISHED 125%(2022-2023)
