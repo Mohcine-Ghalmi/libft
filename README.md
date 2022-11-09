@@ -32,12 +32,12 @@
 
 ### Functions from `<strings.h>` library
 
-*`ft_bzero`	- write zeroes to a byte string.
-*`ft_memset`		- write a byte to a byte string.
-*`ft_memchr`		- locate byte in byte string.
-*`ft_memcmp`		- compare byte string.
-*`ft_memmove`	- copy byte string.
-*`ft_memcpy`	- copy memory area.
+* `ft_bzero`	- write zeroes to a byte string.
+* `ft_memset`		- write a byte to a byte string.
+* `ft_memchr`		- locate byte in byte string.
+* `ft_memcmp`		- compare byte string.
+*  `ft_memmove`	- copy byte string.
+* `ft_memcpy`	- copy memory area.
 
 * `ft_strlen`			- find length of string.
 * `ft_strchr`			- locate character in string (first occurrence).
