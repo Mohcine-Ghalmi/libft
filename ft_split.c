@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:51:03 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/20 11:25:12 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/29 01:00:44 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,18 @@ int	word_size(char const *s, char c)
 	return (wc);
 }
 
-char	**freespl(char **spl, int i)
+void	*ft_free(char **split)
 {
-	while (i--)
-		free (spl[i]);
-	free (spl);
-	return (spl);
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
 }
 
 char	*words(char const *s, char c)
@@ -95,8 +101,8 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (s[i])
 			str[j++] = words(&s[i++], c);
-		if (!str[j - 1])
-			return (freespl(str - 1, j));
+		if (j > 0 && !s[j - 1])
+			return (ft_free(str));
 		while (s[i] && s[i] != c)
 			i++;
 	}

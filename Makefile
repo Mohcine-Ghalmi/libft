@@ -6,7 +6,7 @@
 #    By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 09:12:24 by mghalmi           #+#    #+#              #
-#    Updated: 2022/10/20 11:22:12 by mghalmi          ###   ########.fr        #
+#    Updated: 2022/10/29 01:38:13 by mghalmi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstadd_back.c \
                     ft_lstsize.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
                     ft_lstmap.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 
-OBJB = $(SRCB:.c=.o)
+OBJB = $(SRCB:%.c=%.o)
 
 CFALGS =  -Wall -Wextra -Werror
 
@@ -38,11 +38,14 @@ INCLUDE = libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME): $(OBJ) 
 	ar rc $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJB)
-	ar rc $(NAME) $(OBJB) $(OBJ)
+%.o:%.c $(INCLUDE)
+	$(CC) -c $(CFALGS) $<
+
+bonus: all $(OBJB)
+	ar rc $(NAME) $(OBJB)
 
 clean:
 	rm -rf $(OBJ) $(OBJB)

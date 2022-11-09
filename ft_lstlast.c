@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:46:19 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/10/20 11:58:47 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/10/29 01:43:35 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst && lst->next)
+	if (lst)
+	{
+		while (lst && lst->next)
 		lst = lst->next;
+	}
 	return (lst);
 }
