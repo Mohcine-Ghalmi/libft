@@ -75,5 +75,5 @@
 * `ft_lstclear`		- delete sequence of elements of list from a starting point.
 * `ft_lstiter`		- apply function to content of all list's elements.
 * `ft_lstmap`			- apply function to content of all list's elements into new list.
-
+ 
 made by GHALMI MOHCINE remember that's my [linkedin](https://www.linkedin.com/in/mohcine-ghalmi-759a12209/)
